@@ -48,15 +48,11 @@ window.settings_timer=setTimeout('_vwo_code.finish()',settings_tolerance);var a=
       <h2 id="welcome-to-github-pages">Welcome to GitHub Pages</h2>
 
 <p>Whenever you commit to this repository, GitHub Pages will run <a href="https://jekyllrb.com/">Jekyll</a> to rebuild the pages in your site, from the content in your Markdown files.</p>
-<script>
-function myFunction() {
-  document.getElementById('demo').innerHTML="TextChanged";
-}
-</script>
+
 <p>#This is a test web page.</p>
       
       <p id="demo">Text</p>
-        <button type='button' onclick="myFunction"></button>
+        <button type='button' onclick="document.getElementById('demo').innerHTML="TextChanged"">Click Me!</button>
       <footer class="site-footer">
         
           <span class="site-footer-owner"><a href="https://github.com/Pratik-2003/Test-Website">Test-Website</a> is maintained by <a href="https://github.com/Pratik-2003">Pratik-2003</a>.</span>
