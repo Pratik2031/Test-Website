@@ -47,13 +47,16 @@ window.settings_timer=setTimeout('_vwo_code.finish()',settings_tolerance);var a=
     <section class="main-content">
       <h2 id="welcome-to-github-pages">Welcome to GitHub Pages</h2>
 
-<p>You can use the <a href="https://github.com/Pratik-2003/Demo-Website/edit/master/index.md">editor on GitHub</a> to maintain and preview the content for your website in Markdown files.</p>
-
 <p>Whenever you commit to this repository, GitHub Pages will run <a href="https://jekyllrb.com/">Jekyll</a> to rebuild the pages in your site, from the content in your Markdown files.</p>
-
+<script>
+function myFunction() {
+  document.getElementById('demo').innerHTML="TextChanged";
+}
+</script>
 <p>#This is a test web page.</p>
-
-
+      
+      <p id="demo">Text</p>
+        <button type='button' onclick="myFunction"></button>
       <footer class="site-footer">
         
           <span class="site-footer-owner"><a href="https://github.com/Pratik-2003/Test-Website">Test-Website</a> is maintained by <a href="https://github.com/Pratik-2003">Pratik-2003</a>.</span>
