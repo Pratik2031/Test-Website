@@ -136,6 +136,11 @@ span.psw {
 	window.VWO = window.VWO || [];
 	window.VWO.push(['track.revenueConversion',"100"]);
 	 };
+	     
+	 function customConv(){	 
+	window._vis_opt_queue = window._vis_opt_queue || [];
+	window._vis_opt_queue.push(function(){_vis_opt_goal_conversion(14);});
+	 };
 </script>
     <section class="main-content">
      
@@ -159,6 +164,8 @@ span.psw {
       <input type="checkbox" checked="checked" name="remember"> Remember me
     </label>
 	<button style="color: blue;" onclick="revenue()">Revenue Link</button>  
+	  <p>
+	<button style="color: Yellow;" onclick="customConv()">Custom Conversion</button>
   </div>
 
   <div class="container" style="background-color:#f1f1f1">
