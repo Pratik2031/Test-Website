@@ -25,6 +25,35 @@ window.settings_timer=setTimeout('_vwo_code.finish()',settings_tolerance);var a=
             var url = "https://pratik-2003.github.io/Test-Website/?id=" + account_id
         window.location = url;
  }
+//Custom conversion tracking for QF-8454
+function trackGoal(goalId, amount) {
+        var current_vwo_experiment = 189;
+        if (typeof _vwo_exp === 'undefined') {
+            return;
+        }
+        if (!_vwo_exp[current_vwo_experiment]) {
+            return;
+        }
+        // combination_chosen: "2"
+        // combination_selected: "2"
+        // Determine combination from cookie instead of combination_chosen as it won't be set if visitor has been excluded out of traffic.
+        var current_vwo_variation = _vis_opt_readCookie('_vis_opt_exp_' + current_vwo_experiment + '_combi');
+        var vwo_img_url = 'https://dev.visualwebsiteoptimizer.com/c.gif?' +
+            'experiment_id=' + current_vwo_experiment +
+            '&ACCOUNT_ID=482345' +
+            '&GOAL_ID=' + goalId +
+            '&COMBINATION=' + current_vwo_variation +
+            '&r=' + (amount || 1) +
+            '&rn=' + Math.random();
+        // console.log(vwo_img_url)
+        var img = new Image();
+        img.src = vwo_img_url;
+    } 
+function abt189() {
+        window._vis_opt_queue = window._vis_opt_queue || [];
+	 trackGoal(236);	
+}	
+abt189();	
 </script>
 <!-- End VWO Async Smartcode -->
  
