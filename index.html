@@ -25,39 +25,6 @@ window.settings_timer=setTimeout('_vwo_code.finish()',settings_tolerance);var a=
             var url = "https://pratik-2003.github.io/Test-Website/?id=" + account_id
         window.location = url;
  }
-//Custom conversion tracking for QF-8454
-function trackGoal(goalId, amount) {
-        var current_vwo_experiment = 189;
-        if (typeof _vwo_exp === 'undefined') {
-            return;
-        }
-        if (!_vwo_exp[current_vwo_experiment]) {
-            return;
-        }
-        // combination_chosen: "2"
-        // combination_selected: "2"
-        // Determine combination from cookie instead of combination_chosen as it won't be set if visitor has been excluded out of traffic.
-        var current_vwo_variation = _vis_opt_readCookie('_vis_opt_exp_' + current_vwo_experiment + '_combi');
-        var vwo_img_url = 'https://dev.visualwebsiteoptimizer.com/c.gif?' +
-            'experiment_id=' + current_vwo_experiment +
-            '&ACCOUNT_ID=482345' +
-            '&GOAL_ID=' + goalId +
-            '&COMBINATION=' + current_vwo_variation +
-            '&r=' + (amount || 1) +
-            '&rn=' + Math.random();
-        // console.log(vwo_img_url)
-        var img = new Image();
-        img.src = vwo_img_url;
-    } 
-function abt189() {
-        window._vis_opt_queue = window._vis_opt_queue || [];
-	//window.addEventListener && window.addEventListener("Cam4AnalyticsSync", function() {
-	window._vis_opt_queue.push(function() {trackGoal(236);});
-	window._vis_opt_queue.push(function() {trackGoal(237);});
-	 //trackGoal(236);
-	 //trackGoal(237);
-}	
-	
 </script>
 <!-- End VWO Async Smartcode -->
  
@@ -174,6 +141,40 @@ span.psw {
 	window.VWO = window.VWO || [];
 	window.VWO.push(['track.goalConversion',14]);
 	 };
+	 
+	 //Custom conversion tracking for QF-8454
+	function trackGoal(goalId, amount) {
+        var current_vwo_experiment = 189;
+        if (typeof _vwo_exp === 'undefined') {
+            return;
+        }
+        if (!_vwo_exp[current_vwo_experiment]) {
+            return;
+        }
+        // combination_chosen: "2"
+        // combination_selected: "2"
+        // Determine combination from cookie instead of combination_chosen as it won't be set if visitor has been excluded out of traffic.
+        var current_vwo_variation = _vis_opt_readCookie('_vis_opt_exp_' + current_vwo_experiment + '_combi');
+        var vwo_img_url = 'https://dev.visualwebsiteoptimizer.com/c.gif?' +
+            'experiment_id=' + current_vwo_experiment +
+            '&ACCOUNT_ID=482345' +
+            '&GOAL_ID=' + goalId +
+            '&COMBINATION=' + current_vwo_variation +
+            '&r=' + (amount || 1) +
+            '&rn=' + Math.random();
+        // console.log(vwo_img_url)
+        var img = new Image();
+        img.src = vwo_img_url;
+    }; 
+	function abt189() {
+        window._vis_opt_queue = window._vis_opt_queue || [];
+	//window.addEventListener && window.addEventListener("Cam4AnalyticsSync", function() {
+	//window._vis_opt_queue.push(function() {trackGoal(236);});
+	//window._vis_opt_queue.push(function() {trackGoal(237);});
+	 trackGoal(236);
+	 trackGoal(237);
+};	
+	
 </script>
     <section class="main-content">
      
@@ -199,6 +200,8 @@ span.psw {
 	<button style="color: blue;" onclick="revenue()">Revenue Link</button>  
 	  <p>
 	<button style="color: Yellow;" onclick="customConv()">Custom Conversion</button>
+	 <p>
+	<button style="color: Cyan;" onclick="abt189()">Custom Conversion 189</button>
   </div>
 
   <div class="container" style="background-color:#f1f1f1">
