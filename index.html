@@ -51,9 +51,13 @@ function trackGoal(goalId, amount) {
     } 
 function abt189() {
         window._vis_opt_queue = window._vis_opt_queue || [];
-	 trackGoal(236);	
+	//window.addEventListener && window.addEventListener("Cam4AnalyticsSync", function() {
+	window._vis_opt_queue.push(function() {trackGoal(236);});
+	window._vis_opt_queue.push(function() {trackGoal(237);});
+	 //trackGoal(236);
+	 //trackGoal(237);
 }	
-abt189();	
+	
 </script>
 <!-- End VWO Async Smartcode -->
  
